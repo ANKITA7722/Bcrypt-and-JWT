@@ -7,7 +7,7 @@ const userValidation=async(req, res)=>{
   const token = req.header("x-auth-token");
 
   if (!token) return res.json(false);
-  const verified = jwt.verify(token, "raj1234");
+  const verified = jwt.verify(token, "ankita123");
   if (!verified) return res.json(false);
    return res.json(true);
 
@@ -59,7 +59,7 @@ const userLogin=async(req, res)=>{
         });
         return;
       }
-  const token = jwt.sign({ id: User._id, name:User.name, email:User.email }, "raj1234");
+  const token = jwt.sign({ id: User._id, name:User.name, email:User.email }, "ankita123");
       res.json({ token, user: { id: User._id, username: User.username } });
 }
 
